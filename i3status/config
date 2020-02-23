@@ -1,0 +1,40 @@
+general {
+    output_format = "i3bar"
+    colors = false
+    markup = pango
+    interval = 5
+}
+
+order += "ethernet enp0s20f0u2"
+order += "wireless wlp2s0"
+order += "battery 0"
+order += "tztime local"
+
+ethernet enp0s20f0u2 {
+    format_up = "<span background='#586e75'>  %ip </span>"
+    format_down = ""
+}
+
+wireless wlp2s0 {
+    format_up = "<span background='#586e75'>  %essid [%ip] </span>"
+    format_down = "<span background='#586e75'>  - </span>"
+}
+
+battery 0 {
+	last_full_capacity = true
+    integer_battery_capacity = true
+    format = "<span background='#586e75'> %status %percentage </span>"
+    format_down = "No Battery"
+    status_chr = ""
+    status_bat = ""
+    status_unk = ""
+    status_full = ""
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 30
+    threshold_type = time
+}
+
+tztime local {
+		format = "<span background='#839496'> %time </span>"
+		format_time = "%a %-d %b %H:%M"
+}
