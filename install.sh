@@ -19,6 +19,6 @@ echo "zsh configured completely."
 mkdir -p ~/.i3
 ln -s -f ~/.confs/i3/config ~/.i3/config
 mkdir -p ~/.config/i3status
-ln -s -f ~/.confs/i3status/config ~.config/i3status/config
-ln -s -f ~/.confs/X/.Xresources ~.Xresources
+ln -s -f ~/.confs/i3status/config ~/.config/i3status/config
+ln -s -f ~/.confs/X/.Xresources ~/.Xresources
 echo "i3 configured completely."
